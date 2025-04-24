@@ -1,0 +1,510 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Fundo preto */
+    height: 100%; /* Altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte estilizada */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ajuste conforme necessário */
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.left-column p {
+    font-family: 'Poppins', Arial; /* Fonte complementar */
+    font-size: 1rem; /* Tamanho do texto */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    margin-bottom: 15px; /* Espaço entre os parágrafos */
+    color: #d1e8ff; /* Azul claro para contraste */
+}
+
+.left-column .btn {
+    display: inline-block;
+    background: #007BFF; /* Azul padrão */
+    color: #fff; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Sombra azul */
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+.left-column .btn:hover {
+    background: #0056b3; /* Azul escuro ao passar o mouse */
+}
+
+.right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40%;
+}
+
+.right-column img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%; /* Torna a imagem redonda */
+    border: 5px solid #007BFF; /* Cor azul no contorno */
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6); /* Brilho azul em volta */
+}
+
+/* Container para as linhas animadas */
+.animated-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+
+/* "Estrelas" (partículas) */
+.line {
+    position: fixed;
+    width: 2px; /* Espessura da partícula */
+    height: 2px; /* Altura da partícula */
+    background: #fff; /* Cor branca */
+    border-radius: 50%; /* Torna as partículas redondas */
+    opacity: 0.7; /* Transparência leve */
+    animation: move-stars 5s linear infinite; /* Animação infinita */
+}
+
+.nav-link.active {
+    color: blue !important;
+    border-bottom: 3px solid blue;
+}
+
+/* Estilização About me */
+
+.about-me{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ajuste conforme necessário */
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+.left-column-about, .right-column-about {
+    flex: 1;
+}
+
+.left-column-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 30%;
+}
+
+.left-column-about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%; /* Torna a imagem redonda */
+    border: 5px solid #007BFF; /* Cor azul no contorno */
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6); /* Brilho azul em volta */
+}
+
+.right-column-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.right-column-about p {
+    font-family: 'Poppins', Arial; /* Fonte complementar */
+    font-size: 1rem; /* Tamanho do texto */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    margin-bottom: 15px; /* Espaço entre os parágrafos */
+    color: #d1e8ff; /* Azul claro para contraste */
+}
+
+
+/* Estilização das skills */
+
+.container-skills h2 { 
+position: relative; 
+display: inline-block;
+margin-left: 40px;
+margin-top: 50px;
+}
+
+.container-skills h2::after { 
+content: ''; 
+display: block; 
+width: 200px; 
+height: 2px; 
+background-color: #0026ff; 
+position: absolute; 
+bottom: -5px; 
+left: 0;
+}
+
+.cards-skills{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  justify-items: center;
+}
+
+.skills{
+  display: flex; 
+  align-items: center; 
+  border: 1px solid #0026ff; 
+  padding: 10px; 
+  width: 250px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Sombra azul */
+}
+
+.skills img{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.skills h1{
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.skills img, .skills h1 {
+  transition: transform 0.5s ease; /* Transição suave */
+}
+
+.skills img:hover, .skills h1:hover {
+  transform: scale(1.3); /* Aumenta o tamanho em 10% */
+}
+
+/* Definindo animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título responsivo */
+.title-responsive {
+    font-size: 2.5rem; /* Tamanho padrão para telas grandes */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    font-weight: bold;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    margin-top: 120px;
+}
+
+/* Classe que ativa a animação */
+.title-responsive.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1s ease-out forwards; /* Animação suave */
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .title-responsive {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-responsive {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-responsive {
+        font-size: 1.25rem;
+    }
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão */
+    gap: 20px;
+    justify-items: center; /* Centraliza os itens horizontalmente dentro de cada célula */
+    align-items: center; /* Centraliza os itens verticalmente dentro de cada célula */
+    width: 100%; /* Garantir que a grid ocupe 100% do seu contêiner */
+    max-width: 1200px; /* Tamanho máximo para a grid */
+    margin: 0 auto; /* Garante que a grid fique centralizada dentro do contêiner pai */
+    padding: 20px; /* Adiciona um pouco de espaço ao redor */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) { /* Para telas com largura até 768px (tablets e celulares) */
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+}
+
+/* Estilos para os cards */
+.card {
+    background-color: black;
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garantir que a imagem ou conteúdo não ultrapassem as bordas */
+}
+
+.card h5 {
+    color: white;
+}
+
+.card p {
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+    border-color: #007bff; /* Altera a cor da borda ao passar o mouse */
+}
+
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+      background-color: black; /* Define a cor preta para as setas */
+      border-radius: 50%;     /* Opcional: adiciona bordas arredondadas */
+  }
+
+
+
+/* Animação das partículas */
+@keyframes move-stars {
+    0% {
+        transform: translate(0, 0); /* Posição inicial */
+    }
+    25% {
+        transform: translate(50vw, 10vh) rotate(20deg); /* Movimento curvado */
+    }
+    50% {
+        transform: translate(80vw, -15vh) rotate(-30deg); /* Curva para cima */
+    }
+    75% {
+        transform: translate(120vw, 5vh) rotate(40deg); /* Final da curva */
+    }
+    100% {
+        transform: translate(150vw, 0); /* Sai da tela */
+    }
+}
+
+/* Distribuição das partículas */
+.line:nth-child(1) {
+    top: 5%;
+    left: 0;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+.line:nth-child(2) {
+    top: 20%;
+    left: -5%;
+    animation-duration: 5.5s;
+    animation-delay: 1s;
+}
+.line:nth-child(3) {
+    top: 50%;
+    left: 0;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+.line:nth-child(4) {
+    top: 75%;
+    left: -10%;
+    animation-duration: 6.5s;
+    animation-delay: 0.5s;
+}
+.line:nth-child(5) {
+    top: 90%;
+    left: 0;
+    animation-duration: 5s;
+    animation-delay: 1.5s;
+}
+
+/* From Uiverse.io by Codecite */ 
+.anchor {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid #0026ff;
+    padding: 14px 40px 13px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .anchor:hover {
+    color: #4e484a;
+  }
+  
+  .button a::before {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    background-color: #0026ff;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    height: 111%;
+    transition: all .3s ease;
+  }
+  
+  .button a:hover::before {
+    height: 11%;
+  }
+  
+  .button span {
+    position: relative;
+    z-index: 2;
+    transition: all .3s ease;
+  }
+
+  .container-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajuste o tamanho máximo do container */
+    max-width: 1200px; /* Tamanho máximo do container, se desejar */
+
+  }
+
+/* From Uiverse.io by Medisetti-Venkata-Saikiran */ 
+.social-login-icons {
+    display: flex;
+    align-items: center;
+  }
+  .social-login-icons svg {
+    width: 40px;
+  }
+  
+  .social-icon-1,
+  .social-icon-2,
+  .social-icon-3,
+  .social-icon-4 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .socialcontainer {
+    height: 50px;
+    overflow: hidden;
+  }
+  .social-icon-1 {
+    transition-duration: 0.4s;
+    background-color: #00a6bc81; /* Cor de fundo ao passar o mouse */
+  }
+  .socialcontainer:hover .social-icon-1 {
+    transform: translateY(-50px);
+  }
+  .social-icon-2 {
+    transition-duration: 0.4s;
+    background: linear-gradient(
+      72.44deg,
+      #ff7a00 11.92%,
+      #ff0169 51.56%,
+      #d300c5 85.69%
+    );
+  }
+  .socialcontainer:hover .social-icon-2 {
+    transform: translateY(-50px);
+  }
+  .social-icon-3 {
+    transition-duration: 0.4s;
+    background: #316ff6;
+  }
+  
+  .socialcontainer:hover .social-icon-3 {
+    transform: translateY(-50px);
+  }
+  .social-icon-4 {
+    transition-duration: 0.4s;
+    background: linear-gradient(
+      180deg,
+      rgba(129, 34, 144, 1) 0%,
+      rgba(77, 34, 124, 1) 91%
+    );
+  }
+  
+  .socialcontainer:hover .social-icon-4 {
+    transform: translateY(-50px);
+  }
+  
+
+  .footer{
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: border 0.3s ease;
+  }
+
+  #contact-form input:focus,
+  #contact-form textarea:focus {
+    outline: none;
+    border-color: #0066ff;
+  }
+
+  #contact-form button {
+    background-color: #0026ff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #contact-form button:hover {
+    background-color: #001bcc;
+  }
+
+  #contato label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+  }
